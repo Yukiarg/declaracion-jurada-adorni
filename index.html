@@ -1,106 +1,128 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Declaración Jurada Adorni</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
+<title>Declaración Jurada Adorni</title>
 
-    body {
-      margin: 0;
+<style>
 
-      background-image: url('fondo.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+body {
+  margin: 0;
 
-      color: white;
-      font-family: Arial, sans-serif;
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
+  color: white;
+  font-family: Arial, sans-serif;
 
-      height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-      text-align: center;
-      padding: 20px;
-    }
+  height: 100vh;
 
-    .container {
-      max-width: 800px;
+  text-align: center;
+  padding: 20px;
+}
 
-      background: rgba(0,0,0,0.55);
-      padding: 40px;
-      border-radius: 20px;
+.container {
 
-      backdrop-filter: blur(4px);
-    }
+  max-width: 800px;
 
-    .days {
-      font-size: 7rem;
-      font-weight: bold;
-      color: #4da6ff;
-      margin: 20px 0;
-    }
+  background: rgba(0,0,0,0.55);
 
-    p {
-      font-size: 1.5rem;
-      line-height: 1.5;
-      margin: 0;
-    }
+  padding: 40px;
 
-    .signature {
-      position: fixed;
-      bottom: 15px;
-      width: 100%;
-      text-align: center;
-      font-size: 14px;
-      opacity: 0.5;
-      letter-spacing: 2px;
-      color: white;
-    }
+  border-radius: 20px;
 
-    .case-button {
-      margin-top: 30px;
-      padding: 12px 24px;
+  backdrop-filter: blur(4px);
+}
 
-      font-size: 16px;
+.days {
 
-      border: none;
-      border-radius: 10px;
+  font-size: 7rem;
 
-      background: rgba(255,255,255,0.15);
+  font-weight: bold;
 
-      color: white;
+  color: #4da6ff;
 
-      cursor: pointer;
+  margin: 20px 0;
+}
 
-      transition: 0.3s;
-    }
+p {
 
-    .case-button:hover {
-      background: rgba(255,255,255,0.3);
-    }
+  font-size: 1.5rem;
 
-    .case-text {
-      display: none;
+  line-height: 1.5;
 
-      margin-top: 25px;
+  margin: 0;
+}
 
-      font-size: 1rem;
-      line-height: 1.6;
+.case-button {
 
-      background: rgba(0,0,0,0.5);
+  margin-top: 30px;
 
-      padding: 20px;
+  padding: 12px 24px;
 
-      border-radius: 15px;
-    }
+  font-size: 16px;
 
-  </style>
+  border: none;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.15);
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.case-button:hover {
+
+  background: rgba(255,255,255,0.3);
+}
+
+.case-text {
+
+  display: none;
+
+  margin-top: 25px;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  background: rgba(0,0,0,0.5);
+
+  padding: 20px;
+
+  border-radius: 15px;
+}
+
+.signature {
+
+  position: fixed;
+
+  bottom: 15px;
+
+  width: 100%;
+
+  text-align: center;
+
+  font-size: 14px;
+
+  opacity: 0.5;
+
+  letter-spacing: 2px;
+}
+
+</style>
+
 </head>
 
 <body>
@@ -123,14 +145,7 @@
   <div class="case-text" id="caseText">
 
     <p>
-      El caso.
-    </p>
-
-    <p style="margin-top:15px;">
-      Por ejemplo:
-      “El 6 de mayo el Presidente afirmó que Manuel Adorni
-      presentaría su declaración jurada, pero hasta el momento
-      eso no ocurrió.”
+      Acá podés escribir el texto del caso.
     </p>
 
   </div>
@@ -158,9 +173,13 @@ function toggleCase() {
   const caseText = document.getElementById("caseText");
 
   if (caseText.style.display === "block") {
+
     caseText.style.display = "none";
+
   } else {
+
     caseText.style.display = "block";
+
   }
 
 }
