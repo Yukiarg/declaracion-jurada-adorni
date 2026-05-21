@@ -78,7 +78,7 @@ p {
 
 .case-button {
 
-  margin-top: 30px;
+  margin-top: 12px;
 
   padding: 14px 24px;
 
@@ -129,21 +129,6 @@ p {
   text-align: left;
 
   backdrop-filter: blur(4px);
-}
-
-.section-title {
-
-  margin-top: 40px;
-
-  margin-bottom: 15px;
-
-  font-size: 1.4rem;
-
-  font-weight: bold;
-
-  text-align: left;
-
-  color: white;
 }
 
 .character-item {
@@ -287,10 +272,6 @@ p {
 
   </div>
 
-  <div class="section-title">
-    Personajes del caso
-  </div>
-
   <button class="case-button" onclick="toggleCharacters()">
     Ver personajes
   </button>
@@ -330,6 +311,66 @@ p {
 
       <div class="character-description" id="nechevenko">
         La escribana vinculada a operaciones inmobiliarias investigadas.
+      </div>
+
+    </div>
+
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('tabar')">
+        Matías Tabar
+      </button>
+
+      <div class="character-description" id="tabar">
+        El contratista. Declaró ante la fiscalía sobre pagos en efectivo y reformas millonarias.
+      </div>
+
+    </div>
+
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('molina')">
+        Graciela Molina y Victoria Cancio
+      </button>
+
+      <div class="character-description" id="molina">
+        Las policías. Prestaron 100.000 dólares para financiar la compra de una propiedad.
+      </div>
+
+    </div>
+
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('viegas')">
+        Beatriz Viegas y Claudia Sbabo
+      </button>
+
+      <div class="character-description" id="viegas">
+        Las jubiladas. Vendedoras del departamento adquirido por Adorni.
+      </div>
+
+    </div>
+
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('feijoo')">
+        Pablo Martín Feijoo
+      </button>
+
+      <div class="character-description" id="feijoo">
+        El hijo de la jubilada. Fue citado a declarar por la fiscalía.
+      </div>
+
+    </div>
+
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('rucci')">
+        Natalia Rucci y Marcelo Trimarchi
+      </button>
+
+      <div class="character-description" id="rucci">
+        Los inmobiliarios. Intervinieron en la operación del departamento de Caballito.
       </div>
 
     </div>
