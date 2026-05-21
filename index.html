@@ -6,31 +6,43 @@
   <title>Declaración Jurada Adorni</title>
 
   <style>
+
     body {
       margin: 0;
-      background-image: url('Adorni.html');
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
-background-attachment: fixed;
+
+      background-image: url('fondo.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
       color: white;
       font-family: Arial, sans-serif;
+
       display: flex;
       justify-content: center;
       align-items: center;
+
       height: 100vh;
+
       text-align: center;
       padding: 20px;
     }
 
     .container {
       max-width: 800px;
+
+      background: rgba(0,0,0,0.55);
+      padding: 40px;
+      border-radius: 20px;
+
+      backdrop-filter: blur(4px);
     }
 
     .days {
       font-size: 7rem;
       font-weight: bold;
-      color: #white;
+      color: #4da6ff;
       margin: 20px 0;
     }
 
@@ -48,10 +60,49 @@ background-attachment: fixed;
       font-size: 14px;
       opacity: 0.5;
       letter-spacing: 2px;
+      color: white;
+    }
+
+    .case-button {
+      margin-top: 30px;
+      padding: 12px 24px;
+
+      font-size: 16px;
+
+      border: none;
+      border-radius: 10px;
+
+      background: rgba(255,255,255,0.15);
+
+      color: white;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    .case-button:hover {
+      background: rgba(255,255,255,0.3);
+    }
+
+    .case-text {
+      display: none;
+
+      margin-top: 25px;
+
+      font-size: 1rem;
+      line-height: 1.6;
+
+      background: rgba(0,0,0,0.5);
+
+      padding: 20px;
+
+      border-radius: 15px;
     }
 
   </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -64,6 +115,25 @@ background-attachment: fixed;
     días desde que el Presidente dijo que
     Adorni iba a presentar su declaración jurada.
   </p>
+
+  <button class="case-button" onclick="toggleCase()">
+    El caso
+  </button>
+
+  <div class="case-text" id="caseText">
+
+    <p>
+      Acá podés escribir el texto completo del caso.
+    </p>
+
+    <p style="margin-top:15px;">
+      Por ejemplo:
+      “El 6 de mayo el Presidente afirmó que Manuel Adorni
+      presentaría su declaración jurada, pero hasta el momento
+      eso no ocurrió.”
+    </p>
+
+  </div>
 
 </div>
 
@@ -82,6 +152,18 @@ const difference = today - startDate;
 const days = Math.floor(difference / (1000 * 60 * 60 * 24));
 
 document.getElementById("days").innerText = days;
+
+function toggleCase() {
+
+  const caseText = document.getElementById("caseText");
+
+  if (caseText.style.display === "block") {
+    caseText.style.display = "none";
+  } else {
+    caseText.style.display = "block";
+  }
+
+}
 
 </script>
 
