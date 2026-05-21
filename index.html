@@ -366,17 +366,18 @@ body::before {
       Ver personajes
     </button>
 
+    <button class="case-button" onclick="toggleTrips()">
+      Los viajes
+    </button>
+
   </div>
 
   <div class="case-text" id="caseText">
 
     <p>
-      El caso Adorni: investigación por presunto enriquecimiento ilícito
-En el marco de una causa tramitada ante la Justicia Federal, el jefe de Gabinete de la Nación, Manuel Adorni, se encuentra bajo investigación por presunto enriquecimiento ilícito, delito tipificado en el artículo 268 (2) del Código Penal argentino. La investigación, a cargo del fiscal federal Gerardo Pollicita y bajo la órbita del juez Ariel Lijo, tiene por objeto determinar si el incremento patrimonial del funcionario durante el ejercicio de su cargo resulta compatible con los ingresos lícitos que ha declarado ante los organismos de control competentes.
-El eje de la pesquisa reside en la presunta incompatibilidad entre el nivel de vida sostenido por Adorni y su remuneración como funcionario público. Desde diciembre de 2023 hasta comienzos de 2025, su salario se mantuvo congelado en torno a los $3,5 millones de pesos mensuales, hasta que el Decreto 931/2025 lo elevó a aproximadamente $6.970.000 brutos. La fiscalía indaga si dicho ingreso resulta suficiente para justificar los gastos y adquisiciones patrimoniales detectados en ese período. Diario Río Negro
-Entre los elementos que motivaron la apertura de la causa se encuentran pagos de alquileres abonados en efectivo en moneda extranjera. Los contratos relevados por la instrucción dan cuenta de sucesivos acuerdos locativos: uno por un total de 13.000 dólares abonado entre marzo y diciembre de 2024 a razón de 800 dólares mensuales, con incrementos de 3.000 y 2.000 dólares en enero y febrero de 2025 respectivamente; y un acuerdo posterior por el período marzo-junio de 2025, con pagos en efectivo de 2.400 dólares por los primeros tres meses y 800 dólares por el último. La modalidad de pago en efectivo y en divisas extranjeras ha sido valorada por la fiscalía como un indicio que requiere explicación patrimonial suficiente. Ámbito
-La investigación también detectó operaciones con criptomonedas, cuyo rastreo se realiza a través de exchanges y plataformas locales e internacionales. El avance en el seguimiento de activos digitales representa un cambio metodológico en la pesquisa de presuntas maniobras de enriquecimiento ilícito atribuidas a funcionarios públicos. Infobae
-El objeto procesal de la causa consiste en determinar si los activos —tanto inmuebles como fondos y viajes— se encuentran debidamente justificados por ingresos lícitos y declarados, y si existe correlación entre la documentación patrimonial y las erogaciones efectivamente realizadas. Ante las actuaciones, Adorni sostuvo que todo quedará clarificado con la presentación de su declaración jurada correspondiente al período fiscal 2025, negó la veracidad de algunas cifras aportadas por testigos y afirmó tener la documentación en orden
+      El caso Adorni: investigación por presunto enriquecimiento ilícito.
+      La Justicia Federal investiga si el crecimiento patrimonial del funcionario
+      resulta compatible con sus ingresos declarados durante su gestión.
     </p>
 
   </div>
@@ -432,50 +433,172 @@ El objeto procesal de la causa consiste en determinar si los activos —tanto in
 
     </div>
 
+  </div>
+
+  <div class="case-text" id="tripsBox">
+
     <div class="character-item">
 
-      <button class="character-button" onclick="toggleCharacter('molina')">
-        Graciela Molina y Victoria Cancio
+      <button class="character-button" onclick="toggleCharacter('punta')">
+        Punta del Este — Febrero 2025
       </button>
 
-      <div class="character-description" id="molina">
-        Las policías. Prestaron 100.000 dólares para financiar la compra de una propiedad.
+      <div class="character-description" id="punta">
+
+        Adorni viajó con su familia en jet privado junto al periodista Marcelo Grandío,
+        titular de la productora ImHouse, que mantiene contratos con la TV Pública.
+
+        <br><br>
+
+        El vuelo de ida fue facturado a nombre de la productora del periodista,
+        no del funcionario.
+
+        <br><br>
+
+        El costo total ida y vuelta habría sido de aproximadamente 7.830 dólares.
+
+        <br><br>
+
+        La causa tramita de forma separada a la de enriquecimiento ilícito,
+        bajo la figura de dádivas.
+
+        <br><br>
+
+        El expediente incorporó registros de cámaras de la PSA,
+        planes de vuelo de la ANAC e informes de la UIF.
+
+        <br><br>
+
+        El juez Ariel Lijo aún no tendría certificado si Adorni efectivamente
+        abonó su parte, pese a que el funcionario sostuvo públicamente
+        que pagó "su proporcional".
+
       </div>
 
     </div>
 
     <div class="character-item">
 
-      <button class="character-button" onclick="toggleCharacter('viegas')">
-        Beatriz Viegas y Claudia Sbabo
+      <button class="character-button" onclick="toggleCharacter('aruba')">
+        Aruba — Diciembre 2024 / Enero 2025
       </button>
 
-      <div class="character-description" id="viegas">
-        Las jubiladas. Vendedoras del departamento adquirido por Adorni.
+      <div class="character-description" id="aruba">
+
+        Confirmado por la fiscalía a partir de información aportada
+        por la aerolínea Latam.
+
+        <br><br>
+
+        La familia viajó en clase Premium Economy,
+        partiendo el 29 de diciembre de 2024 y regresando el 10 de enero de 2025.
+
+        <br><br>
+
+        El costo total habría ascendido a aproximadamente 14.636 dólares,
+        entre pasajes (5.762 dólares) y hospedaje (8.874 dólares).
+
+        <br><br>
+
+        El viaje generó repercusión política porque habría ocurrido días después
+        de que el propio Adorni comunicara el pedido de austeridad
+        del presidente Milei a sus funcionarios.
+
       </div>
 
     </div>
 
     <div class="character-item">
 
-      <button class="character-button" onclick="toggleCharacter('feijoo')">
-        Pablo Martín Feijoo
+      <button class="character-button" onclick="toggleCharacter('ny')">
+        Nueva York — Marzo 2025
       </button>
 
-      <div class="character-description" id="feijoo">
-        El hijo de la jubilada. Fue citado a declarar por la fiscalía.
+      <div class="character-description" id="ny">
+
+        Adorni viajó como parte de una comitiva oficial en el avión presidencial.
+
+        <br><br>
+
+        Su esposa Bettina Angeletti lo acompañó en el vuelo de ida
+        pese a no tener cargo público,
+        en aparente violación del decreto que prohíbe viajes particulares
+        en aeronaves estatales.
+
+        <br><br>
+
+        Para el regreso, Angeletti pagó 5.154 dólares por su pasaje,
+        acreditado mediante documentación bancaria incorporada al expediente.
+
+        <br><br>
+
+        La causa penal por la inclusión de Angeletti en el vuelo oficial
+        fue archivada por considerar que su presencia no generó gastos adicionales al Estado.
+
+        <br><br>
+
+        Sin embargo, el gasto del pasaje de regreso permanece
+        bajo análisis en la causa por enriquecimiento ilícito.
+
       </div>
 
     </div>
 
     <div class="character-item">
 
-      <button class="character-button" onclick="toggleCharacter('rucci')">
-        Natalia Rucci y Marcelo Trimarchi
+      <button class="character-button" onclick="toggleCharacter('bariloche')">
+        Bariloche — Junio 2024
       </button>
 
-      <div class="character-description" id="rucci">
-        Los inmobiliarios. Intervinieron en la operación del departamento de Caballito.
+      <div class="character-description" id="bariloche">
+
+        La fiscalía solicitó formalmente al Llao Llao Hotel & Resort
+        información sobre la reserva y el pago de una estadía de cinco noches.
+
+        <br><br>
+
+        El costo total del viaje habría rondado los 9 millones de pesos
+        entre pasajes y alojamiento.
+
+        <br><br>
+
+        El problema central es que el pago habría sido efectuado
+        aproximadamente tres meses después de realizado el viaje.
+
+        <br><br>
+
+        La fiscalía intenta determinar la modalidad del depósito
+        para identificar al pagador.
+
+      </div>
+
+    </div>
+
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('guale')">
+        Gualeguaychú — Diciembre 2024 y Noviembre 2025
+      </button>
+
+      <div class="character-description" id="guale">
+
+        Dos estadías en el hotel Bolacuá,
+        incorporadas al expediente según trascendidos judiciales.
+
+        <br><br>
+
+        La primera entre el 6 y el 8 de diciembre de 2024,
+        y la segunda entre el 28 y el 30 de noviembre de 2025.
+
+        <br><br>
+
+        Ambas habrían sumado aproximadamente 2.350.000 pesos.
+
+        <br><br>
+
+        La fiscalía las incorporó como parte del patrón general
+        de gastos bajo análisis.
+
       </div>
 
     </div>
@@ -516,6 +639,16 @@ function toggleCase() {
 function toggleCharacters() {
 
   const box = document.getElementById("charactersBox");
+
+  box.style.display =
+    box.style.display === "block"
+      ? "none"
+      : "block";
+}
+
+function toggleTrips() {
+
+  const box = document.getElementById("tripsBox");
 
   box.style.display =
     box.style.display === "block"
