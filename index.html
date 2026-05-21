@@ -11,9 +11,7 @@
 
 <style>
 
-*{
-  box-sizing:border-box;
-}
+*{ box-sizing:border-box; }
 
 body {
 
@@ -26,7 +24,6 @@ body {
   background-attachment: fixed;
 
   color: white;
-
   font-family: 'Inter', sans-serif;
 
   min-height: 100vh;
@@ -38,37 +35,27 @@ body {
   padding: 20px;
 
   position: relative;
-
   overflow-x: hidden;
 }
 
 body::before {
-
   content: "";
-
   position: fixed;
-
   inset: 0;
-
   background: rgba(0,0,0,0.42);
-
   z-index: -1;
 }
 
-/* ========= SIDEBAR ========= */
+/* SIDEBAR */
 
 .sidebar {
 
   position: fixed;
-
   top: 24px;
-
   left: 24px;
 
   display: flex;
-
   flex-direction: column;
-
   gap: 10px;
 
   z-index: 50;
@@ -76,48 +63,39 @@ body::before {
 
 .case-button {
 
-  width: 190px;
+  width: 200px;
 
   padding: 14px 18px;
 
   font-size: 14px;
-
   font-weight: 600;
 
   border: none;
-
   border-radius: 14px;
 
   background: rgba(0,0,0,0.45);
-
-  backdrop-filter: blur(8px);
-
   color: white;
 
   cursor: pointer;
 
-  transition: all 0.25s ease;
-
   text-align: left;
+
+  transition: 0.25s;
 }
 
 .case-button:hover {
-
   background: rgba(255,255,255,0.18);
-
   transform: translateX(3px);
 }
 
-/* PDF button igual estilo */
+/* PDF */
 
 .pdf-button {
-
   text-decoration: none;
-
   display: block;
 }
 
-/* ========= CONTENIDO ========= */
+/* CONTENIDO */
 
 .container {
 
@@ -130,64 +108,27 @@ body::before {
 
   border-radius: 30px;
 
-  backdrop-filter: blur(10px);
-
-  box-shadow: 0 15px 50px rgba(0,0,0,0.45);
-
   text-align: center;
+  backdrop-filter: blur(10px);
 }
 
 .subtitle {
-
   font-size: 0.95rem;
-
   opacity: 0.75;
-
   text-transform: uppercase;
-
-  letter-spacing: 1px;
-
-  margin-bottom: 14px;
 }
 
 .days {
-
-  font-size: clamp(5rem, 14vw, 9rem);
-
+  font-size: 6rem;
   font-weight: 800;
-
   color: #4da6ff;
-
-  line-height: 1;
-
-  margin: 0;
-
-  text-shadow:
-    0 0 20px rgba(77,166,255,0.45),
-    0 0 40px rgba(77,166,255,0.15);
 }
 
 .bottom-text {
-
   font-size: 1.2rem;
-
-  line-height: 1.6;
-
-  margin-top: 24px;
-
-  opacity: 0.95;
 }
 
-.separator {
-
-  height: 1px;
-
-  background: rgba(255,255,255,0.12);
-
-  margin: 36px 0;
-}
-
-/* ========= BLOQUES ========= */
+/* BLOQUES */
 
 .case-text {
 
@@ -201,61 +142,27 @@ body::before {
 
   border-radius: 20px;
 
-  animation: fadeIn 0.25s ease;
-
-  max-height: 520px;
-
-  overflow-y: auto;
+  margin-top: 20px;
 }
 
-.character-item {
+/* PERSONAJES */
 
-  margin-top: 12px;
-}
+.character-item { margin-top: 12px; }
 
 .character-button {
 
   width: 100%;
-
-  padding: 15px;
+  padding: 14px;
 
   border: none;
-
-  border-radius: 14px;
+  border-radius: 12px;
 
   background: rgba(255,255,255,0.08);
-
   color: white;
-
-  font-size: 15px;
-
-  font-weight: 600;
 
   cursor: pointer;
 
   text-align: left;
-
-  transition: all 0.25s ease;
-
-  position: relative;
-}
-
-.character-button::after {
-
-  content: "+";
-
-  position: absolute;
-
-  right: 16px;
-
-  opacity: 0.5;
-}
-
-.character-button:hover {
-
-  background: rgba(255,255,255,0.16);
-
-  transform: translateX(3px);
 }
 
 .character-description {
@@ -264,84 +171,21 @@ body::before {
 
   margin-top: 8px;
 
-  padding: 16px;
-
-  border-radius: 14px;
+  padding: 14px;
 
   background: rgba(255,255,255,0.05);
 
-  font-size: 0.9rem;
-
-  line-height: 1.65;
-
-  animation: fadeIn 0.2s ease;
+  border-radius: 12px;
 }
+
+/* SIDEBAR FIX */
 
 .signature {
-
   position: fixed;
-
-  bottom: 12px;
-
-  right: 16px;
-
+  bottom: 10px;
+  right: 14px;
+  opacity: 0.25;
   font-size: 11px;
-
-  opacity: 0.22;
-
-  letter-spacing: 2px;
-}
-
-@keyframes fadeIn {
-
-  from {
-    opacity: 0;
-    transform: translateY(-4px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* ========= MOBILE ========= */
-
-@media (max-width: 900px) {
-
-  body {
-    align-items: flex-start;
-    padding-top: 110px;
-  }
-
-  .sidebar {
-
-    top: 12px;
-    left: 12px;
-    right: 12px;
-
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .case-button {
-
-    width: auto;
-    flex: 1;
-  }
-
-  .container {
-
-    padding: 28px;
-  }
-
-  .days {
-    font-size: 5rem;
-  }
-
-  .bottom-text {
-    font-size: 1rem;
-  }
 }
 
 </style>
@@ -350,7 +194,7 @@ body::before {
 
 <body>
 
-<!-- SIDEBAR -->
+<!-- BOTONES -->
 
 <div class="sidebar">
 
@@ -378,60 +222,29 @@ body::before {
     días sin que Manuel Adorni presentara su declaración jurada.
   </p>
 
-  <div class="separator"></div>
-
   <!-- CASO -->
-
   <div class="case-text" id="caseText">
-
     <p>
       El caso Adorni: investigación por presunto enriquecimiento ilícito.
-      La Justicia Federal investiga si el crecimiento patrimonial del funcionario
-      resulta compatible con sus ingresos declarados durante su gestión.
     </p>
-
   </div>
 
   <!-- PERSONAJES -->
-
   <div class="case-text" id="charactersBox">
 
     <div class="character-item">
-
       <button class="character-button" onclick="toggleCharacter('adorni')">Manuel Adorni</button>
-
-      <div class="character-description" id="adorni">
-        El investigado. Jefe de Gabinete desde 2023.
-      </div>
-
-    </div>
-
-    <div class="character-item">
-
-      <button class="character-button" onclick="toggleCharacter('bettina')">Bettina Angeletti</button>
-
-      <div class="character-description" id="bettina">
-        La esposa. Titular de propiedades bajo investigación.
-      </div>
-
+      <div class="character-description" id="adorni">Investigado principal.</div>
     </div>
 
   </div>
 
   <!-- VIAJES -->
-
   <div class="case-text" id="tripsBox">
 
     <div class="character-item">
-
-      <button class="character-button" onclick="toggleCharacter('punta')">
-        Punta del Este — 2025
-      </button>
-
-      <div class="character-description" id="punta">
-        Viaje en jet privado bajo investigación por dádivas.
-      </div>
-
+      <button class="character-button" onclick="toggleCharacter('punta')">Punta del Este</button>
+      <div class="character-description" id="punta">Viaje bajo análisis.</div>
     </div>
 
   </div>
@@ -442,65 +255,54 @@ body::before {
 
 <script>
 
-const startDate = new Date("2026-05-06T00:00:00");
+/* DÍAS */
+const startDate = new Date("2026-05-06");
 const today = new Date();
-const difference = today.getTime() - startDate.getTime();
+const diff = today - startDate;
 
 document.getElementById("days").innerText =
-Math.max(0, Math.floor(difference / (1000*60*60*24)));
+Math.max(0, Math.floor(diff / (1000*60*60*24)));
 
+/* CONTROL */
 
-/* ========= CONTROL PRINCIPAL ========= */
-
-function closeAllMainSections() {
+function closeAll() {
   document.getElementById("caseText").style.display = "none";
   document.getElementById("charactersBox").style.display = "none";
   document.getElementById("tripsBox").style.display = "none";
+  closeDesc();
 }
 
-function closeAllDescriptions() {
+function closeDesc() {
   document.querySelectorAll(".character-description")
     .forEach(e => e.style.display = "none");
 }
 
-function toggleCase() {
+function toggleCase(){
   const el = document.getElementById("caseText");
   const open = el.style.display === "block";
-
-  closeAllMainSections();
-  closeAllDescriptions();
-
-  if (!open) el.style.display = "block";
+  closeAll();
+  if(!open) el.style.display = "block";
 }
 
-function toggleCharacters() {
+function toggleCharacters(){
   const el = document.getElementById("charactersBox");
   const open = el.style.display === "block";
-
-  closeAllMainSections();
-  closeAllDescriptions();
-
-  if (!open) el.style.display = "block";
+  closeAll();
+  if(!open) el.style.display = "block";
 }
 
-function toggleTrips() {
+function toggleTrips(){
   const el = document.getElementById("tripsBox");
   const open = el.style.display === "block";
-
-  closeAllMainSections();
-  closeAllDescriptions();
-
-  if (!open) el.style.display = "block";
+  closeAll();
+  if(!open) el.style.display = "block";
 }
 
-function toggleCharacter(id) {
-
+function toggleCharacter(id){
   const el = document.getElementById(id);
   const open = el.style.display === "block";
-
-  closeAllDescriptions();
-
-  if (!open) el.style.display = "block";
+  closeDesc();
+  if(!open) el.style.display = "block";
 }
 
 </script>
