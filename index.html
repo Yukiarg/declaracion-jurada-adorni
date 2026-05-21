@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Declaración Jurada Adorni</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .days {
+      font-size: 7rem;
+      font-weight: bold;
+      color: #ff4444;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.5;
+    }
+
+    .source {
+      margin-top: 40px;
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <p>Han pasado</p>
+
+  <div class="days" id="days"></div>
+
+  <p>
+    días desde que el Presidente dijo que
+    Adorni iba a presentar su declaración jurada.
+  </p>
+
+  <div class="source">
+    Fecha tomada: 15 de mayo de 2026
+  </div>
+</div>
+
+<script>
+
+const startDate = new Date("2026-05-15");
+
+const today = new Date();
+
+const difference = today - startDate;
+
+const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+
+document.getElementById("days").innerText = days;
+
+</script>
+
+</body>
+</html>
