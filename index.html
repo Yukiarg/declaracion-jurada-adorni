@@ -188,7 +188,7 @@ body::before {
 
   border-radius: 18px;
 
-  max-height: 320px;
+  max-height: 420px;
 
   overflow-y: auto;
 
@@ -626,44 +626,80 @@ const days = Math.max(
 
 document.getElementById("days").innerText = days;
 
+
+/* ========= BLOQUES PRINCIPALES ========= */
+
+function closeAllMainSections() {
+
+  document.getElementById("caseText").style.display = "none";
+
+  document.getElementById("charactersBox").style.display = "none";
+
+  document.getElementById("tripsBox").style.display = "none";
+}
+
 function toggleCase() {
 
-  const caseText = document.getElementById("caseText");
+  const element = document.getElementById("caseText");
 
-  caseText.style.display =
-    caseText.style.display === "block"
-      ? "none"
-      : "block";
+  const isOpen = element.style.display === "block";
+
+  closeAllMainSections();
+
+  if (!isOpen) {
+    element.style.display = "block";
+  }
 }
 
 function toggleCharacters() {
 
-  const box = document.getElementById("charactersBox");
+  const element = document.getElementById("charactersBox");
 
-  box.style.display =
-    box.style.display === "block"
-      ? "none"
-      : "block";
+  const isOpen = element.style.display === "block";
+
+  closeAllMainSections();
+
+  if (!isOpen) {
+    element.style.display = "block";
+  }
 }
 
 function toggleTrips() {
 
-  const box = document.getElementById("tripsBox");
+  const element = document.getElementById("tripsBox");
 
-  box.style.display =
-    box.style.display === "block"
-      ? "none"
-      : "block";
+  const isOpen = element.style.display === "block";
+
+  closeAllMainSections();
+
+  if (!isOpen) {
+    element.style.display = "block";
+  }
+}
+
+
+/* ========= PERSONAJES Y VIAJES ========= */
+
+function closeAllDescriptions() {
+
+  const descriptions = document.querySelectorAll(".character-description");
+
+  descriptions.forEach(item => {
+    item.style.display = "none";
+  });
 }
 
 function toggleCharacter(id) {
 
   const element = document.getElementById(id);
 
-  element.style.display =
-    element.style.display === "block"
-      ? "none"
-      : "block";
+  const isOpen = element.style.display === "block";
+
+  closeAllDescriptions();
+
+  if (!isOpen) {
+    element.style.display = "block";
+  }
 }
 
 </script>
