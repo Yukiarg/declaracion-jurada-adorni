@@ -11,7 +11,9 @@
 
 <style>
 
-*{ box-sizing:border-box; }
+*{
+  box-sizing:border-box;
+}
 
 body {
 
@@ -24,6 +26,7 @@ body {
   background-attachment: fixed;
 
   color: white;
+
   font-family: 'Inter', sans-serif;
 
   min-height: 100vh;
@@ -35,27 +38,37 @@ body {
   padding: 20px;
 
   position: relative;
+
   overflow-x: hidden;
 }
 
 body::before {
+
   content: "";
+
   position: fixed;
+
   inset: 0;
+
   background: rgba(0,0,0,0.42);
+
   z-index: -1;
 }
 
-/* ========= SIDEBAR ========= */
+/* ========= BOTONERA IZQUIERDA ========= */
 
 .sidebar {
 
   position: fixed;
+
   top: 24px;
+
   left: 24px;
 
   display: flex;
+
   flex-direction: column;
+
   gap: 10px;
 
   z-index: 50;
@@ -63,34 +76,36 @@ body::before {
 
 .case-button {
 
-  width: 210px;
+  width: 190px;
 
   padding: 14px 18px;
 
   font-size: 14px;
+
   font-weight: 600;
 
   border: none;
+
   border-radius: 14px;
 
   background: rgba(0,0,0,0.45);
+
+  backdrop-filter: blur(8px);
+
   color: white;
 
   cursor: pointer;
 
-  text-align: left;
+  transition: all 0.25s ease;
 
-  transition: 0.25s;
+  text-align: left;
 }
 
 .case-button:hover {
-  background: rgba(255,255,255,0.18);
-  transform: translateX(3px);
-}
 
-.pdf-button {
-  text-decoration: none;
-  display: block;
+  background: rgba(255,255,255,0.18);
+
+  transform: translateX(3px);
 }
 
 /* ========= CONTENIDO ========= */
@@ -98,7 +113,7 @@ body::before {
 .container {
 
   width: 100%;
-  max-width: 800px;
+  max-width: 760px;
 
   background: rgba(0,0,0,0.38);
 
@@ -106,28 +121,64 @@ body::before {
 
   border-radius: 30px;
 
-  text-align: center;
   backdrop-filter: blur(10px);
+
+  box-shadow: 0 15px 50px rgba(0,0,0,0.45);
+
+  text-align: center;
 }
 
 .subtitle {
+
   font-size: 0.95rem;
+
   opacity: 0.75;
+
   text-transform: uppercase;
+
+  letter-spacing: 1px;
+
+  margin-bottom: 14px;
 }
 
 .days {
-  font-size: 6rem;
+
+  font-size: clamp(5rem, 14vw, 9rem);
+
   font-weight: 800;
+
   color: #4da6ff;
+
+  line-height: 1;
+
+  margin: 0;
+
+  text-shadow:
+    0 0 20px rgba(77,166,255,0.45),
+    0 0 40px rgba(77,166,255,0.15);
 }
 
 .bottom-text {
+
   font-size: 1.2rem;
-  margin-top: 10px;
+
+  line-height: 1.6;
+
+  margin-top: 24px;
+
+  opacity: 0.95;
 }
 
-/* ========= SECCIONES ========= */
+.separator {
+
+  height: 1px;
+
+  background: rgba(255,255,255,0.12);
+
+  margin: 36px 0;
+}
+
+/* ========= BLOQUES ========= */
 
 .case-text {
 
@@ -141,25 +192,26 @@ body::before {
 
   border-radius: 20px;
 
-  margin-top: 20px;
+  animation: fadeIn 0.25s ease;
 
-  max-height: 520px;
+  max-height: 500px;
 
   overflow-y: auto;
 }
 
-/* ========= ITEMS ========= */
+.character-item {
 
-.item {
   margin-top: 12px;
 }
 
-.item-btn {
+.character-button {
 
   width: 100%;
+
   padding: 15px;
 
   border: none;
+
   border-radius: 14px;
 
   background: rgba(255,255,255,0.08);
@@ -167,58 +219,130 @@ body::before {
   color: white;
 
   font-size: 15px;
+
   font-weight: 600;
 
   cursor: pointer;
 
   text-align: left;
+
+  transition: all 0.25s ease;
+
+  position: relative;
 }
 
-.item-desc {
+.character-button::after {
+
+  content: "+";
+
+  position: absolute;
+
+  right: 16px;
+
+  opacity: 0.5;
+}
+
+.character-button:hover {
+
+  background: rgba(255,255,255,0.16);
+
+  transform: translateX(3px);
+}
+
+.character-description {
 
   display: none;
 
   margin-top: 8px;
 
-  padding: 15px;
+  padding: 16px;
+
+  border-radius: 14px;
 
   background: rgba(255,255,255,0.05);
 
-  border-radius: 12px;
-
   font-size: 0.9rem;
-  line-height: 1.6;
-}
 
-/* ========= SIGNATURE ========= */
+  line-height: 1.65;
+
+  animation: fadeIn 0.2s ease;
+}
 
 .signature {
 
   position: fixed;
-  bottom: 10px;
-  right: 14px;
 
-  opacity: 0.25;
+  bottom: 12px;
+
+  right: 16px;
+
   font-size: 11px;
+
+  opacity: 0.22;
+
+  letter-spacing: 2px;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* ========= MOBILE ========= */
 
 @media (max-width: 900px) {
 
-  body { align-items:flex-start; padding-top:110px; }
+  body {
+
+    align-items: flex-start;
+
+    padding-top: 110px;
+  }
 
   .sidebar {
-    flex-direction: row;
-    flex-wrap: wrap;
+
+    top: 12px;
+
+    left: 12px;
+
     right: 12px;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
   }
 
   .case-button {
-    flex: 1;
+
     width: auto;
+
+    flex: 1;
   }
 
+  .container {
+
+    padding: 28px;
+
+    margin-top: 20px;
+  }
+
+  .days {
+
+    font-size: 5rem;
+  }
+
+  .bottom-text {
+
+    font-size: 1rem;
+  }
 }
 
 </style>
@@ -227,27 +351,31 @@ body::before {
 
 <body>
 
-<!-- SIDEBAR -->
+<!-- ========= BOTONES ========= -->
 
 <div class="sidebar">
 
-  <button class="case-button" onclick="toggleCase()">El caso</button>
+  <button class="case-button" onclick="toggleCase()">
+    El caso
+  </button>
 
-  <button class="case-button" onclick="toggleCharacters()">Personajes</button>
+  <button class="case-button" onclick="toggleCharacters()">
+    Ver personajes
+  </button>
 
-  <button class="case-button" onclick="toggleTrips()">Los viajes</button>
-
-  <a class="case-button pdf-button" href="DeclaracionJurada2024.pdf" target="_blank">
-    Declaración Jurada 2024
-  </a>
+  <button class="case-button" onclick="toggleTrips()">
+    Los viajes
+  </button>
 
 </div>
 
-<!-- CONTENIDO -->
+<!-- ========= CONTENIDO ========= -->
 
 <div class="container">
 
-  <p class="subtitle">Desde la promesa presidencial pasaron</p>
+  <p class="subtitle">
+    Desde la promesa presidencial pasaron
+  </p>
 
   <div class="days" id="days"></div>
 
@@ -255,145 +383,253 @@ body::before {
     días sin que Manuel Adorni presentara su declaración jurada.
   </p>
 
-  <!-- CASO -->
+  <div class="separator"></div>
+
+  <!-- ========= CASO ========= -->
 
   <div class="case-text" id="caseText">
+
     <p>
       El caso Adorni: investigación por presunto enriquecimiento ilícito.
-      La Justicia Federal investiga inconsistencias patrimoniales.
+      La Justicia Federal investiga si el crecimiento patrimonial del funcionario
+      resulta compatible con sus ingresos declarados durante su gestión.
     </p>
+
   </div>
 
-  <!-- PERSONAJES -->
+  <!-- ========= PERSONAJES ========= -->
 
   <div class="case-text" id="charactersBox">
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('adorni')">Manuel Adorni</button>
-      <div class="item-desc" id="adorni">
-        Jefe de Gabinete. Investigado por evolución patrimonial.
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('adorni')">
+        Manuel Adorni
+      </button>
+
+      <div class="character-description" id="adorni">
+        El investigado. Jefe de Gabinete de la Nación desde diciembre de 2023,
+        con un sueldo congelado durante más de un año.
       </div>
+
     </div>
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('bettina')">Bettina Angeletti</button>
-      <div class="item-desc" id="bettina">
-        Esposa. Vinculada a propiedades bajo análisis.
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('bettina')">
+        Bettina Angeletti
+      </button>
+
+      <div class="character-description" id="bettina">
+        La esposa. Figura como titular de al menos una de las propiedades adquiridas.
       </div>
+
     </div>
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('nechevenko')">Adriana Nechevenko</button>
-      <div class="item-desc" id="nechevenko">
-        Escribana en operaciones inmobiliarias.
-      </div>
-    </div>
+    <div class="character-item">
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('tabar')">Matías Tabar</button>
-      <div class="item-desc" id="tabar">
-        Contratista. Declaraciones sobre pagos en efectivo.
+      <button class="character-button" onclick="toggleCharacter('nechevenko')">
+        Adriana Nechevenko
+      </button>
+
+      <div class="character-description" id="nechevenko">
+        La escribana vinculada a operaciones inmobiliarias investigadas.
       </div>
+
     </div>
 
   </div>
 
-  <!-- VIAJES -->
+  <!-- ========= VIAJES ========= -->
 
   <div class="case-text" id="tripsBox">
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('punta')">Punta del Este — Feb 2025</button>
-      <div class="item-desc" id="punta">
-        Jet privado. Posible dádiva. Vuelo vinculado a productora.
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('punta')">
+        Punta del Este — Febrero 2025
+      </button>
+
+      <div class="character-description" id="punta">
+
+        Adorni viajó con su familia en jet privado junto al periodista Marcelo Grandío,
+        titular de la productora ImHouse, que mantiene contratos con la TV Pública.
+
+        <br><br>
+
+        El vuelo de ida fue facturado a nombre de la productora del periodista,
+        no del funcionario.
+
+        <br><br>
+
+        El costo total ida y vuelta habría sido de aproximadamente 7.830 dólares.
+
+        <br><br>
+
+        La causa tramita de forma separada a la de enriquecimiento ilícito,
+        bajo la figura de dádivas.
+
+        <br><br>
+
+        El expediente incorporó registros de cámaras de la PSA,
+        planes de vuelo de la ANAC e informes de la UIF.
+
       </div>
+
     </div>
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('aruba')">Aruba — Dic 2024 / Ene 2025</button>
-      <div class="item-desc" id="aruba">
-        Viaje familiar. Premium Economy. Costos elevados.
+    <div class="character-item">
+
+      <button class="character-button" onclick="toggleCharacter('aruba')">
+        Aruba — Diciembre 2024 / Enero 2025
+      </button>
+
+      <div class="character-description" id="aruba">
+
+        Confirmado por la fiscalía a partir de información aportada
+        por la aerolínea Latam.
+
+        <br><br>
+
+        La familia viajó en clase Premium Economy,
+        partiendo el 29 de diciembre de 2024 y regresando el 10 de enero de 2025.
+
+        <br><br>
+
+        El costo total habría ascendido a aproximadamente 14.636 dólares,
+        entre pasajes y hospedaje.
+
       </div>
+
     </div>
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('ny')">Nueva York — Mar 2025</button>
-      <div class="item-desc" id="ny">
-        Viaje oficial con uso de avión presidencial.
-      </div>
-    </div>
+    <div class="character-item">
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('bariloche')">Bariloche — Jun 2024</button>
-      <div class="item-desc" id="bariloche">
-        Estadía en Llao Llao. Pago diferido bajo análisis.
-      </div>
-    </div>
+      <button class="character-button" onclick="toggleCharacter('ny')">
+        Nueva York — Marzo 2025
+      </button>
 
-    <div class="item">
-      <button class="item-btn" onclick="toggleItem('guale')">Gualeguaychú — 2024/2025</button>
-      <div class="item-desc" id="guale">
-        Dos estadías en Hotel Bolacuá.
+      <div class="character-description" id="ny">
+
+        Adorni viajó como parte de una comitiva oficial en el avión presidencial.
+
+        <br><br>
+
+        Su esposa Bettina Angeletti lo acompañó pese a no tener cargo público,
+        en aparente violación del decreto que prohíbe viajes particulares
+        en aeronaves estatales.
+
       </div>
+
     </div>
 
   </div>
 
 </div>
 
-<div class="signature">Yuki</div>
+<div class="signature">
+  Yuki
+</div>
 
 <script>
 
-/* días */
-const startDate = new Date("2026-05-06");
-const diff = new Date() - startDate;
+const startDate = new Date("2026-05-06T00:00:00");
 
-document.getElementById("days").innerText =
-Math.max(0, Math.floor(diff / (1000*60*60*24)));
+const today = new Date();
 
-/* acordeón principal */
+const difference = today.getTime() - startDate.getTime();
 
-function closeAll(){
-  document.getElementById("caseText").style.display="none";
-  document.getElementById("charactersBox").style.display="none";
-  document.getElementById("tripsBox").style.display="none";
-  closeItems();
+const days = Math.max(
+  0,
+  Math.floor(difference / (1000 * 60 * 60 * 24))
+);
+
+document.getElementById("days").innerText = days;
+
+
+/* ========= CERRAR TODO ========= */
+
+function closeAllMainSections() {
+
+  document.getElementById("caseText").style.display = "none";
+
+  document.getElementById("charactersBox").style.display = "none";
+
+  document.getElementById("tripsBox").style.display = "none";
 }
 
-function closeItems(){
-  document.querySelectorAll(".item-desc")
-    .forEach(e => e.style.display="none");
+
+/* ========= BOTONES PRINCIPALES ========= */
+
+function toggleCase() {
+
+  const element = document.getElementById("caseText");
+
+  const isOpen = element.style.display === "block";
+
+  closeAllMainSections();
+
+  closeAllDescriptions();
+
+  if (!isOpen) {
+    element.style.display = "block";
+  }
 }
 
-function toggleCase(){
-  const el=document.getElementById("caseText");
-  const open=el.style.display==="block";
-  closeAll();
-  if(!open) el.style.display="block";
+function toggleCharacters() {
+
+  const element = document.getElementById("charactersBox");
+
+  const isOpen = element.style.display === "block";
+
+  closeAllMainSections();
+
+  closeAllDescriptions();
+
+  if (!isOpen) {
+    element.style.display = "block";
+  }
 }
 
-function toggleCharacters(){
-  const el=document.getElementById("charactersBox");
-  const open=el.style.display==="block";
-  closeAll();
-  if(!open) el.style.display="block";
+function toggleTrips() {
+
+  const element = document.getElementById("tripsBox");
+
+  const isOpen = element.style.display === "block";
+
+  closeAllMainSections();
+
+  closeAllDescriptions();
+
+  if (!isOpen) {
+    element.style.display = "block";
+  }
 }
 
-function toggleTrips(){
-  const el=document.getElementById("tripsBox");
-  const open=el.style.display==="block";
-  closeAll();
-  if(!open) el.style.display="block";
+
+/* ========= ACORDEON INTERNO ========= */
+
+function closeAllDescriptions() {
+
+  const descriptions =
+    document.querySelectorAll(".character-description");
+
+  descriptions.forEach(item => {
+    item.style.display = "none";
+  });
 }
 
-/* acordeón interno */
+function toggleCharacter(id) {
 
-function toggleItem(id){
-  const el=document.getElementById(id);
-  const open=el.style.display==="block";
-  closeItems();
-  if(!open) el.style.display="block";
+  const element = document.getElementById(id);
+
+  const isOpen = element.style.display === "block";
+
+  closeAllDescriptions();
+
+  if (!isOpen) {
+    element.style.display = "block";
+  }
 }
 
 </script>
