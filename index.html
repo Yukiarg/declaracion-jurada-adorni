@@ -46,7 +46,7 @@ body::before {
   z-index: -1;
 }
 
-/* SIDEBAR */
+/* ========= SIDEBAR ========= */
 
 .sidebar {
 
@@ -63,7 +63,7 @@ body::before {
 
 .case-button {
 
-  width: 200px;
+  width: 210px;
 
   padding: 14px 18px;
 
@@ -88,19 +88,17 @@ body::before {
   transform: translateX(3px);
 }
 
-/* PDF */
-
 .pdf-button {
   text-decoration: none;
   display: block;
 }
 
-/* CONTENIDO */
+/* ========= CONTENIDO ========= */
 
 .container {
 
   width: 100%;
-  max-width: 760px;
+  max-width: 800px;
 
   background: rgba(0,0,0,0.38);
 
@@ -126,9 +124,10 @@ body::before {
 
 .bottom-text {
   font-size: 1.2rem;
+  margin-top: 10px;
 }
 
-/* BLOQUES */
+/* ========= SECCIONES ========= */
 
 .case-text {
 
@@ -143,49 +142,83 @@ body::before {
   border-radius: 20px;
 
   margin-top: 20px;
+
+  max-height: 520px;
+
+  overflow-y: auto;
 }
 
-/* PERSONAJES */
+/* ========= ITEMS ========= */
 
-.character-item { margin-top: 12px; }
+.item {
+  margin-top: 12px;
+}
 
-.character-button {
+.item-btn {
 
   width: 100%;
-  padding: 14px;
+  padding: 15px;
 
   border: none;
-  border-radius: 12px;
+  border-radius: 14px;
 
   background: rgba(255,255,255,0.08);
+
   color: white;
+
+  font-size: 15px;
+  font-weight: 600;
 
   cursor: pointer;
 
   text-align: left;
 }
 
-.character-description {
+.item-desc {
 
   display: none;
 
   margin-top: 8px;
 
-  padding: 14px;
+  padding: 15px;
 
   background: rgba(255,255,255,0.05);
 
   border-radius: 12px;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
-/* SIDEBAR FIX */
+/* ========= SIGNATURE ========= */
 
 .signature {
+
   position: fixed;
   bottom: 10px;
   right: 14px;
+
   opacity: 0.25;
   font-size: 11px;
+}
+
+/* ========= MOBILE ========= */
+
+@media (max-width: 900px) {
+
+  body { align-items:flex-start; padding-top:110px; }
+
+  .sidebar {
+    flex-direction: row;
+    flex-wrap: wrap;
+    right: 12px;
+  }
+
+  .case-button {
+    flex: 1;
+    width: auto;
+  }
+
 }
 
 </style>
@@ -194,7 +227,7 @@ body::before {
 
 <body>
 
-<!-- BOTONES -->
+<!-- SIDEBAR -->
 
 <div class="sidebar">
 
@@ -223,28 +256,85 @@ body::before {
   </p>
 
   <!-- CASO -->
+
   <div class="case-text" id="caseText">
     <p>
       El caso Adorni: investigación por presunto enriquecimiento ilícito.
+      La Justicia Federal investiga inconsistencias patrimoniales.
     </p>
   </div>
 
   <!-- PERSONAJES -->
+
   <div class="case-text" id="charactersBox">
 
-    <div class="character-item">
-      <button class="character-button" onclick="toggleCharacter('adorni')">Manuel Adorni</button>
-      <div class="character-description" id="adorni">Investigado principal.</div>
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('adorni')">Manuel Adorni</button>
+      <div class="item-desc" id="adorni">
+        Jefe de Gabinete. Investigado por evolución patrimonial.
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('bettina')">Bettina Angeletti</button>
+      <div class="item-desc" id="bettina">
+        Esposa. Vinculada a propiedades bajo análisis.
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('nechevenko')">Adriana Nechevenko</button>
+      <div class="item-desc" id="nechevenko">
+        Escribana en operaciones inmobiliarias.
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('tabar')">Matías Tabar</button>
+      <div class="item-desc" id="tabar">
+        Contratista. Declaraciones sobre pagos en efectivo.
+      </div>
     </div>
 
   </div>
 
   <!-- VIAJES -->
+
   <div class="case-text" id="tripsBox">
 
-    <div class="character-item">
-      <button class="character-button" onclick="toggleCharacter('punta')">Punta del Este</button>
-      <div class="character-description" id="punta">Viaje bajo análisis.</div>
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('punta')">Punta del Este — Feb 2025</button>
+      <div class="item-desc" id="punta">
+        Jet privado. Posible dádiva. Vuelo vinculado a productora.
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('aruba')">Aruba — Dic 2024 / Ene 2025</button>
+      <div class="item-desc" id="aruba">
+        Viaje familiar. Premium Economy. Costos elevados.
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('ny')">Nueva York — Mar 2025</button>
+      <div class="item-desc" id="ny">
+        Viaje oficial con uso de avión presidencial.
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('bariloche')">Bariloche — Jun 2024</button>
+      <div class="item-desc" id="bariloche">
+        Estadía en Llao Llao. Pago diferido bajo análisis.
+      </div>
+    </div>
+
+    <div class="item">
+      <button class="item-btn" onclick="toggleItem('guale')">Gualeguaychú — 2024/2025</button>
+      <div class="item-desc" id="guale">
+        Dos estadías en Hotel Bolacuá.
+      </div>
     </div>
 
   </div>
@@ -255,54 +345,55 @@ body::before {
 
 <script>
 
-/* DÍAS */
+/* días */
 const startDate = new Date("2026-05-06");
-const today = new Date();
-const diff = today - startDate;
+const diff = new Date() - startDate;
 
 document.getElementById("days").innerText =
 Math.max(0, Math.floor(diff / (1000*60*60*24)));
 
-/* CONTROL */
+/* acordeón principal */
 
-function closeAll() {
-  document.getElementById("caseText").style.display = "none";
-  document.getElementById("charactersBox").style.display = "none";
-  document.getElementById("tripsBox").style.display = "none";
-  closeDesc();
+function closeAll(){
+  document.getElementById("caseText").style.display="none";
+  document.getElementById("charactersBox").style.display="none";
+  document.getElementById("tripsBox").style.display="none";
+  closeItems();
 }
 
-function closeDesc() {
-  document.querySelectorAll(".character-description")
-    .forEach(e => e.style.display = "none");
+function closeItems(){
+  document.querySelectorAll(".item-desc")
+    .forEach(e => e.style.display="none");
 }
 
 function toggleCase(){
-  const el = document.getElementById("caseText");
-  const open = el.style.display === "block";
+  const el=document.getElementById("caseText");
+  const open=el.style.display==="block";
   closeAll();
-  if(!open) el.style.display = "block";
+  if(!open) el.style.display="block";
 }
 
 function toggleCharacters(){
-  const el = document.getElementById("charactersBox");
-  const open = el.style.display === "block";
+  const el=document.getElementById("charactersBox");
+  const open=el.style.display==="block";
   closeAll();
-  if(!open) el.style.display = "block";
+  if(!open) el.style.display="block";
 }
 
 function toggleTrips(){
-  const el = document.getElementById("tripsBox");
-  const open = el.style.display === "block";
+  const el=document.getElementById("tripsBox");
+  const open=el.style.display==="block";
   closeAll();
-  if(!open) el.style.display = "block";
+  if(!open) el.style.display="block";
 }
 
-function toggleCharacter(id){
-  const el = document.getElementById(id);
-  const open = el.style.display === "block";
-  closeDesc();
-  if(!open) el.style.display = "block";
+/* acordeón interno */
+
+function toggleItem(id){
+  const el=document.getElementById(id);
+  const open=el.style.display==="block";
+  closeItems();
+  if(!open) el.style.display="block";
 }
 
 </script>
