@@ -55,7 +55,7 @@ body::before {
   z-index: -1;
 }
 
-/* ========= BOTONERA IZQUIERDA ========= */
+/* ========= SIDEBAR ========= */
 
 .sidebar {
 
@@ -106,6 +106,15 @@ body::before {
   background: rgba(255,255,255,0.18);
 
   transform: translateX(3px);
+}
+
+/* PDF button igual estilo */
+
+.pdf-button {
+
+  text-decoration: none;
+
+  display: block;
 }
 
 /* ========= CONTENIDO ========= */
@@ -194,7 +203,7 @@ body::before {
 
   animation: fadeIn 0.25s ease;
 
-  max-height: 500px;
+  max-height: 520px;
 
   overflow-y: auto;
 }
@@ -301,46 +310,36 @@ body::before {
 @media (max-width: 900px) {
 
   body {
-
     align-items: flex-start;
-
     padding-top: 110px;
   }
 
   .sidebar {
 
     top: 12px;
-
     left: 12px;
-
     right: 12px;
 
     flex-direction: row;
-
     flex-wrap: wrap;
   }
 
   .case-button {
 
     width: auto;
-
     flex: 1;
   }
 
   .container {
 
     padding: 28px;
-
-    margin-top: 20px;
   }
 
   .days {
-
     font-size: 5rem;
   }
 
   .bottom-text {
-
     font-size: 1rem;
   }
 }
@@ -351,31 +350,27 @@ body::before {
 
 <body>
 
-<!-- ========= BOTONES ========= -->
+<!-- SIDEBAR -->
 
 <div class="sidebar">
 
-  <button class="case-button" onclick="toggleCase()">
-    El caso
-  </button>
+  <button class="case-button" onclick="toggleCase()">El caso</button>
 
-  <button class="case-button" onclick="toggleCharacters()">
-    Ver personajes
-  </button>
+  <button class="case-button" onclick="toggleCharacters()">Personajes</button>
 
-  <button class="case-button" onclick="toggleTrips()">
-    Los viajes
-  </button>
+  <button class="case-button" onclick="toggleTrips()">Los viajes</button>
+
+  <a class="case-button pdf-button" href="DeclaracionJurada2024.pdf" target="_blank">
+    Declaración Jurada 2024
+  </a>
 
 </div>
 
-<!-- ========= CONTENIDO ========= -->
+<!-- CONTENIDO -->
 
 <div class="container">
 
-  <p class="subtitle">
-    Desde la promesa presidencial pasaron
-  </p>
+  <p class="subtitle">Desde la promesa presidencial pasaron</p>
 
   <div class="days" id="days"></div>
 
@@ -385,7 +380,7 @@ body::before {
 
   <div class="separator"></div>
 
-  <!-- ========= CASO ========= -->
+  <!-- CASO -->
 
   <div class="case-text" id="caseText">
 
@@ -397,128 +392,44 @@ body::before {
 
   </div>
 
-  <!-- ========= PERSONAJES ========= -->
+  <!-- PERSONAJES -->
 
   <div class="case-text" id="charactersBox">
 
     <div class="character-item">
 
-      <button class="character-button" onclick="toggleCharacter('adorni')">
-        Manuel Adorni
-      </button>
+      <button class="character-button" onclick="toggleCharacter('adorni')">Manuel Adorni</button>
 
       <div class="character-description" id="adorni">
-        El investigado. Jefe de Gabinete de la Nación desde diciembre de 2023,
-        con un sueldo congelado durante más de un año.
+        El investigado. Jefe de Gabinete desde 2023.
       </div>
 
     </div>
 
     <div class="character-item">
 
-      <button class="character-button" onclick="toggleCharacter('bettina')">
-        Bettina Angeletti
-      </button>
+      <button class="character-button" onclick="toggleCharacter('bettina')">Bettina Angeletti</button>
 
       <div class="character-description" id="bettina">
-        La esposa. Figura como titular de al menos una de las propiedades adquiridas.
-      </div>
-
-    </div>
-
-    <div class="character-item">
-
-      <button class="character-button" onclick="toggleCharacter('nechevenko')">
-        Adriana Nechevenko
-      </button>
-
-      <div class="character-description" id="nechevenko">
-        La escribana vinculada a operaciones inmobiliarias investigadas.
+        La esposa. Titular de propiedades bajo investigación.
       </div>
 
     </div>
 
   </div>
 
-  <!-- ========= VIAJES ========= -->
+  <!-- VIAJES -->
 
   <div class="case-text" id="tripsBox">
 
     <div class="character-item">
 
       <button class="character-button" onclick="toggleCharacter('punta')">
-        Punta del Este — Febrero 2025
+        Punta del Este — 2025
       </button>
 
       <div class="character-description" id="punta">
-
-        Adorni viajó con su familia en jet privado junto al periodista Marcelo Grandío,
-        titular de la productora ImHouse, que mantiene contratos con la TV Pública.
-
-        <br><br>
-
-        El vuelo de ida fue facturado a nombre de la productora del periodista,
-        no del funcionario.
-
-        <br><br>
-
-        El costo total ida y vuelta habría sido de aproximadamente 7.830 dólares.
-
-        <br><br>
-
-        La causa tramita de forma separada a la de enriquecimiento ilícito,
-        bajo la figura de dádivas.
-
-        <br><br>
-
-        El expediente incorporó registros de cámaras de la PSA,
-        planes de vuelo de la ANAC e informes de la UIF.
-
-      </div>
-
-    </div>
-
-    <div class="character-item">
-
-      <button class="character-button" onclick="toggleCharacter('aruba')">
-        Aruba — Diciembre 2024 / Enero 2025
-      </button>
-
-      <div class="character-description" id="aruba">
-
-        Confirmado por la fiscalía a partir de información aportada
-        por la aerolínea Latam.
-
-        <br><br>
-
-        La familia viajó en clase Premium Economy,
-        partiendo el 29 de diciembre de 2024 y regresando el 10 de enero de 2025.
-
-        <br><br>
-
-        El costo total habría ascendido a aproximadamente 14.636 dólares,
-        entre pasajes y hospedaje.
-
-      </div>
-
-    </div>
-
-    <div class="character-item">
-
-      <button class="character-button" onclick="toggleCharacter('ny')">
-        Nueva York — Marzo 2025
-      </button>
-
-      <div class="character-description" id="ny">
-
-        Adorni viajó como parte de una comitiva oficial en el avión presidencial.
-
-        <br><br>
-
-        Su esposa Bettina Angeletti lo acompañó pese a no tener cargo público,
-        en aparente violación del decreto que prohíbe viajes particulares
-        en aeronaves estatales.
-
+        Viaje en jet privado bajo investigación por dádivas.
       </div>
 
     </div>
@@ -527,109 +438,69 @@ body::before {
 
 </div>
 
-<div class="signature">
-  Yuki
-</div>
+<div class="signature">Yuki</div>
 
 <script>
 
 const startDate = new Date("2026-05-06T00:00:00");
-
 const today = new Date();
-
 const difference = today.getTime() - startDate.getTime();
 
-const days = Math.max(
-  0,
-  Math.floor(difference / (1000 * 60 * 60 * 24))
-);
-
-document.getElementById("days").innerText = days;
+document.getElementById("days").innerText =
+Math.max(0, Math.floor(difference / (1000*60*60*24)));
 
 
-/* ========= CERRAR TODO ========= */
+/* ========= CONTROL PRINCIPAL ========= */
 
 function closeAllMainSections() {
-
   document.getElementById("caseText").style.display = "none";
-
   document.getElementById("charactersBox").style.display = "none";
-
   document.getElementById("tripsBox").style.display = "none";
 }
 
-
-/* ========= BOTONES PRINCIPALES ========= */
+function closeAllDescriptions() {
+  document.querySelectorAll(".character-description")
+    .forEach(e => e.style.display = "none");
+}
 
 function toggleCase() {
-
-  const element = document.getElementById("caseText");
-
-  const isOpen = element.style.display === "block";
+  const el = document.getElementById("caseText");
+  const open = el.style.display === "block";
 
   closeAllMainSections();
-
   closeAllDescriptions();
 
-  if (!isOpen) {
-    element.style.display = "block";
-  }
+  if (!open) el.style.display = "block";
 }
 
 function toggleCharacters() {
-
-  const element = document.getElementById("charactersBox");
-
-  const isOpen = element.style.display === "block";
+  const el = document.getElementById("charactersBox");
+  const open = el.style.display === "block";
 
   closeAllMainSections();
-
   closeAllDescriptions();
 
-  if (!isOpen) {
-    element.style.display = "block";
-  }
+  if (!open) el.style.display = "block";
 }
 
 function toggleTrips() {
-
-  const element = document.getElementById("tripsBox");
-
-  const isOpen = element.style.display === "block";
+  const el = document.getElementById("tripsBox");
+  const open = el.style.display === "block";
 
   closeAllMainSections();
-
   closeAllDescriptions();
 
-  if (!isOpen) {
-    element.style.display = "block";
-  }
-}
-
-
-/* ========= ACORDEON INTERNO ========= */
-
-function closeAllDescriptions() {
-
-  const descriptions =
-    document.querySelectorAll(".character-description");
-
-  descriptions.forEach(item => {
-    item.style.display = "none";
-  });
+  if (!open) el.style.display = "block";
 }
 
 function toggleCharacter(id) {
 
-  const element = document.getElementById(id);
-
-  const isOpen = element.style.display === "block";
+  const el = document.getElementById(id);
+  const open = el.style.display === "block";
 
   closeAllDescriptions();
 
-  if (!isOpen) {
-    element.style.display = "block";
-  }
+  if (!open) el.style.display = "block";
 }
 
 </script>
