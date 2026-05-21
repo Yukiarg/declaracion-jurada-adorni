@@ -29,13 +29,11 @@ body {
 
   font-family: 'Inter', sans-serif;
 
+  min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
-
-  min-height: 100vh;
-
-  text-align: center;
 
   padding: 20px;
 
@@ -52,38 +50,95 @@ body::before {
 
   inset: 0;
 
-  background: rgba(0,0,0,0.38);
+  background: rgba(0,0,0,0.42);
 
   z-index: -1;
 }
 
+/* ========= BOTONERA IZQUIERDA ========= */
+
+.sidebar {
+
+  position: fixed;
+
+  top: 24px;
+
+  left: 24px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+
+  z-index: 50;
+}
+
+.case-button {
+
+  width: 190px;
+
+  padding: 14px 18px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  border: none;
+
+  border-radius: 14px;
+
+  background: rgba(0,0,0,0.45);
+
+  backdrop-filter: blur(8px);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+
+  text-align: left;
+}
+
+.case-button:hover {
+
+  background: rgba(255,255,255,0.18);
+
+  transform: translateX(3px);
+}
+
+/* ========= CONTENIDO ========= */
+
 .container {
 
   width: 100%;
-  max-width: 680px;
+  max-width: 760px;
 
-  background: rgba(0,0,0,0.42);
+  background: rgba(0,0,0,0.38);
 
-  padding: 42px;
+  padding: 46px;
 
-  border-radius: 28px;
+  border-radius: 30px;
 
   backdrop-filter: blur(10px);
 
   box-shadow: 0 15px 50px rgba(0,0,0,0.45);
+
+  text-align: center;
 }
 
 .subtitle {
 
-  font-size: 1rem;
+  font-size: 0.95rem;
 
-  opacity: 0.8;
-
-  letter-spacing: 1px;
+  opacity: 0.75;
 
   text-transform: uppercase;
 
-  margin-bottom: 10px;
+  letter-spacing: 1px;
+
+  margin-bottom: 14px;
 }
 
 .days {
@@ -94,9 +149,9 @@ body::before {
 
   color: #4da6ff;
 
-  margin: 0;
-
   line-height: 1;
+
+  margin: 0;
 
   text-shadow:
     0 0 20px rgba(77,166,255,0.45),
@@ -107,11 +162,11 @@ body::before {
 
   font-size: 1.2rem;
 
-  line-height: 1.5;
-
-  opacity: 0.94;
+  line-height: 1.6;
 
   margin-top: 24px;
+
+  opacity: 0.95;
 }
 
 .separator {
@@ -120,88 +175,33 @@ body::before {
 
   background: rgba(255,255,255,0.12);
 
-  margin: 34px 0;
+  margin: 36px 0;
 }
 
-.buttons {
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  gap: 12px;
-}
-
-.case-button {
-
-  width: 100%;
-
-  max-width: 320px;
-
-  padding: 15px 22px;
-
-  font-size: 15px;
-
-  font-weight: 600;
-
-  border: none;
-
-  border-radius: 14px;
-
-  background: rgba(255,255,255,0.12);
-
-  color: white;
-
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-
-  backdrop-filter: blur(4px);
-
-  letter-spacing: 0.3px;
-}
-
-.case-button:hover {
-
-  background: rgba(255,255,255,0.22);
-
-  transform: translateY(-2px);
-
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
-}
+/* ========= BLOQUES ========= */
 
 .case-text {
 
   display: none;
 
-  margin-top: 20px;
-
-  font-size: 0.95rem;
-
-  line-height: 1.65;
-
-  background: rgba(0,0,0,0.52);
-
-  padding: 20px;
-
-  border-radius: 18px;
-
-  max-height: 420px;
-
-  overflow-y: auto;
-
   text-align: left;
 
+  background: rgba(0,0,0,0.45);
+
+  padding: 22px;
+
+  border-radius: 20px;
+
   animation: fadeIn 0.25s ease;
+
+  max-height: 500px;
+
+  overflow-y: auto;
 }
 
 .character-item {
 
   margin-top: 12px;
-
-  text-align: left;
 }
 
 .character-button {
@@ -239,7 +239,7 @@ body::before {
 
   right: 16px;
 
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .character-button:hover {
@@ -255,19 +255,17 @@ body::before {
 
   margin-top: 8px;
 
-  padding: 15px;
+  padding: 16px;
 
   border-radius: 14px;
 
   background: rgba(255,255,255,0.05);
 
-  font-size: 0.88rem;
+  font-size: 0.9rem;
 
-  line-height: 1.6;
+  line-height: 1.65;
 
-  text-align: left;
-
-  animation: fadeIn 0.25s ease;
+  animation: fadeIn 0.2s ease;
 }
 
 .signature {
@@ -280,18 +278,16 @@ body::before {
 
   font-size: 11px;
 
-  opacity: 0.25;
+  opacity: 0.22;
 
   letter-spacing: 2px;
-
-  color: white;
 }
 
 @keyframes fadeIn {
 
   from {
     opacity: 0;
-    transform: translateY(-5px);
+    transform: translateY(-4px);
   }
 
   to {
@@ -300,23 +296,42 @@ body::before {
   }
 }
 
-@media (max-width: 600px) {
+/* ========= MOBILE ========= */
+
+@media (max-width: 900px) {
+
+  body {
+
+    align-items: flex-start;
+
+    padding-top: 110px;
+  }
+
+  .sidebar {
+
+    top: 12px;
+
+    left: 12px;
+
+    right: 12px;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+  }
+
+  .case-button {
+
+    width: auto;
+
+    flex: 1;
+  }
 
   .container {
 
-    padding: 24px;
+    padding: 28px;
 
-    border-radius: 22px;
-  }
-
-  .subtitle {
-
-    font-size: 0.8rem;
-  }
-
-  .bottom-text {
-
-    font-size: 1rem;
+    margin-top: 20px;
   }
 
   .days {
@@ -324,15 +339,9 @@ body::before {
     font-size: 5rem;
   }
 
-  .case-button,
-  .character-button {
+  .bottom-text {
 
-    font-size: 14px;
-  }
-
-  .case-text {
-
-    max-height: 360px;
+    font-size: 1rem;
   }
 }
 
@@ -341,6 +350,26 @@ body::before {
 </head>
 
 <body>
+
+<!-- ========= BOTONES ========= -->
+
+<div class="sidebar">
+
+  <button class="case-button" onclick="toggleCase()">
+    El caso
+  </button>
+
+  <button class="case-button" onclick="toggleCharacters()">
+    Ver personajes
+  </button>
+
+  <button class="case-button" onclick="toggleTrips()">
+    Los viajes
+  </button>
+
+</div>
+
+<!-- ========= CONTENIDO ========= -->
 
 <div class="container">
 
@@ -356,21 +385,7 @@ body::before {
 
   <div class="separator"></div>
 
-  <div class="buttons">
-
-    <button class="case-button" onclick="toggleCase()">
-      El caso
-    </button>
-
-    <button class="case-button" onclick="toggleCharacters()">
-      Ver personajes
-    </button>
-
-    <button class="case-button" onclick="toggleTrips()">
-      Los viajes
-    </button>
-
-  </div>
+  <!-- ========= CASO ========= -->
 
   <div class="case-text" id="caseText">
 
@@ -381,6 +396,8 @@ body::before {
     </p>
 
   </div>
+
+  <!-- ========= PERSONAJES ========= -->
 
   <div class="case-text" id="charactersBox">
 
@@ -421,19 +438,9 @@ body::before {
 
     </div>
 
-    <div class="character-item">
-
-      <button class="character-button" onclick="toggleCharacter('tabar')">
-        Matías Tabar
-      </button>
-
-      <div class="character-description" id="tabar">
-        El contratista. Declaró ante la fiscalía sobre pagos en efectivo y reformas millonarias.
-      </div>
-
-    </div>
-
   </div>
+
+  <!-- ========= VIAJES ========= -->
 
   <div class="case-text" id="tripsBox">
 
@@ -467,12 +474,6 @@ body::before {
         El expediente incorporó registros de cámaras de la PSA,
         planes de vuelo de la ANAC e informes de la UIF.
 
-        <br><br>
-
-        El juez Ariel Lijo aún no tendría certificado si Adorni efectivamente
-        abonó su parte, pese a que el funcionario sostuvo públicamente
-        que pagó "su proporcional".
-
       </div>
 
     </div>
@@ -496,13 +497,7 @@ body::before {
         <br><br>
 
         El costo total habría ascendido a aproximadamente 14.636 dólares,
-        entre pasajes (5.762 dólares) y hospedaje (8.874 dólares).
-
-        <br><br>
-
-        El viaje generó repercusión política porque habría ocurrido días después
-        de que el propio Adorni comunicara el pedido de austeridad
-        del presidente Milei a sus funcionarios.
+        entre pasajes y hospedaje.
 
       </div>
 
@@ -520,84 +515,9 @@ body::before {
 
         <br><br>
 
-        Su esposa Bettina Angeletti lo acompañó en el vuelo de ida
-        pese a no tener cargo público,
+        Su esposa Bettina Angeletti lo acompañó pese a no tener cargo público,
         en aparente violación del decreto que prohíbe viajes particulares
         en aeronaves estatales.
-
-        <br><br>
-
-        Para el regreso, Angeletti pagó 5.154 dólares por su pasaje,
-        acreditado mediante documentación bancaria incorporada al expediente.
-
-        <br><br>
-
-        La causa penal por la inclusión de Angeletti en el vuelo oficial
-        fue archivada por considerar que su presencia no generó gastos adicionales al Estado.
-
-        <br><br>
-
-        Sin embargo, el gasto del pasaje de regreso permanece
-        bajo análisis en la causa por enriquecimiento ilícito.
-
-      </div>
-
-    </div>
-
-    <div class="character-item">
-
-      <button class="character-button" onclick="toggleCharacter('bariloche')">
-        Bariloche — Junio 2024
-      </button>
-
-      <div class="character-description" id="bariloche">
-
-        La fiscalía solicitó formalmente al Llao Llao Hotel & Resort
-        información sobre la reserva y el pago de una estadía de cinco noches.
-
-        <br><br>
-
-        El costo total del viaje habría rondado los 9 millones de pesos
-        entre pasajes y alojamiento.
-
-        <br><br>
-
-        El problema central es que el pago habría sido efectuado
-        aproximadamente tres meses después de realizado el viaje.
-
-        <br><br>
-
-        La fiscalía intenta determinar la modalidad del depósito
-        para identificar al pagador.
-
-      </div>
-
-    </div>
-
-    <div class="character-item">
-
-      <button class="character-button" onclick="toggleCharacter('guale')">
-        Gualeguaychú — Diciembre 2024 y Noviembre 2025
-      </button>
-
-      <div class="character-description" id="guale">
-
-        Dos estadías en el hotel Bolacuá,
-        incorporadas al expediente según trascendidos judiciales.
-
-        <br><br>
-
-        La primera entre el 6 y el 8 de diciembre de 2024,
-        y la segunda entre el 28 y el 30 de noviembre de 2025.
-
-        <br><br>
-
-        Ambas habrían sumado aproximadamente 2.350.000 pesos.
-
-        <br><br>
-
-        La fiscalía las incorporó como parte del patrón general
-        de gastos bajo análisis.
 
       </div>
 
@@ -627,7 +547,7 @@ const days = Math.max(
 document.getElementById("days").innerText = days;
 
 
-/* ========= BLOQUES PRINCIPALES ========= */
+/* ========= CERRAR TODO ========= */
 
 function closeAllMainSections() {
 
@@ -638,6 +558,9 @@ function closeAllMainSections() {
   document.getElementById("tripsBox").style.display = "none";
 }
 
+
+/* ========= BOTONES PRINCIPALES ========= */
+
 function toggleCase() {
 
   const element = document.getElementById("caseText");
@@ -645,6 +568,8 @@ function toggleCase() {
   const isOpen = element.style.display === "block";
 
   closeAllMainSections();
+
+  closeAllDescriptions();
 
   if (!isOpen) {
     element.style.display = "block";
@@ -659,6 +584,8 @@ function toggleCharacters() {
 
   closeAllMainSections();
 
+  closeAllDescriptions();
+
   if (!isOpen) {
     element.style.display = "block";
   }
@@ -672,17 +599,20 @@ function toggleTrips() {
 
   closeAllMainSections();
 
+  closeAllDescriptions();
+
   if (!isOpen) {
     element.style.display = "block";
   }
 }
 
 
-/* ========= PERSONAJES Y VIAJES ========= */
+/* ========= ACORDEON INTERNO ========= */
 
 function closeAllDescriptions() {
 
-  const descriptions = document.querySelectorAll(".character-description");
+  const descriptions =
+    document.querySelectorAll(".character-description");
 
   descriptions.forEach(item => {
     item.style.display = "none";
